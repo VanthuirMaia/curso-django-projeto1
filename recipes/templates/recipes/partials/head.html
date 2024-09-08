@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {% load static %}
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css"
         integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -176,6 +178,8 @@
             box-shadow: -5px 5px 10px rgba(0, 0, 0, .2);
             transform: scale(1);
             transition: all 300ms ease-in-out;
+            border-radius: .4rem;
+            overflow: hidden;
         }
 
         .project img {
@@ -218,6 +222,85 @@
 
         .project-author a:hover {
             color: var(--color-primary-dark);
+        }
+
+        .project-meta-container {
+            display: flex;
+            flex-flow: row wrap;
+            padding: var(--spacing-gutter-medium);
+            background: var(--color-gray-1);
+        }
+
+        .project-meta {
+            display: flex;
+            flex-flow: column nowrap;
+            flex-shrink: 1;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        .project-meta-title {
+            font-size: 1.6rem;
+        }
+
+        .project-footer a {
+            background: var(--color-primary-dark);
+            display: block;
+            color: var(--color-white);
+            text-decoration: none;
+            text-align: center;
+            padding: 1.5rem var(--spacing-gutter-medium);
+            transition: all 300ms ease-in-out;
+        }
+
+        .project-footer a:hover {
+            filter: brightness(2);
+        }
+
+
+
+        .main-footer {
+            background-color: var(--color-primary-dark-hover);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .footer-content a {
+            text-decoration: none;
+            color: var(--color-white);
+            margin-left: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .footer-content p {
+            margin: 0;
+            font-size: 14px;
+            color: #bbb;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            color: var(--color-white);
+            font-size: 16px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
         }
     </style>
 </head>
