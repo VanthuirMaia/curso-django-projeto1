@@ -4,7 +4,6 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        {"name":"Python Debugger: Current File","type":"debugpy","request":"launch","program":"${file}","console":"integratedTerminal"},
         {
             "name": "Python Debugger: Django",
             "type": "debugpy",
@@ -13,7 +12,7 @@
                 "runserver"
             ],
             "django": true,
-            "autoStartBrowser": false,
+            "autoStartBrowser": true,
             "program": "${workspaceFolder}\\manage.py"
         }
     ]
