@@ -118,8 +118,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",  # ou "os.path.join(BASE_DIR, 'static')", dependendo da versão do Django
+    BASE_DIR / "base_static",  # ou "os.path.join(BASE_DIR, 'static')", dependendo da versão do Django
 ]
+STATIC_ROOT = BASE_DIR / 'static'
 
 
 # Default primary key field type
