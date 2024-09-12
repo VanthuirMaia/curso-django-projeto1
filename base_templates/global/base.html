@@ -1,5 +1,12 @@
 {% load static %}
-{% include "recipes/partials/head.html" %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    {% include "recipes/partials/head.html" %}
+    <title>{% block title  %}{% endblock title  %} Portifólio - Vanthuir Maia</title>
+</head>
 
 <body>
     {% include 'recipes/partials/header.html' %}
