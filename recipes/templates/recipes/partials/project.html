@@ -5,42 +5,43 @@
     </div>
     <div class="project-title-container">
         <h2 class="recipe-title">
-            Projeto Clone SPOTIFY
+            {{ recipe.title }}
         </h2>
     </div>
 
     <div class="project-author">
         <span class="project-author-item">
             <i class="fas fa-user"></i>
-            Vanthuir Maia
+            {{ recipe.author.first_name}}
+            {{ recipe.author.last_name}}
         </span>
         <span class="project-author-item">
             <i class="fas fa-calendar-alt"></i>
-            08/09/2024 às 18:21
+            {{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}
         </span>
         <span class="project-author-item">
             <a href="/recipes/category/UDEMY">
                 <i class="fas fa-layer-group"></i>
-                <span>UDEMY</span>
+                <span> {{ recipe.category.name}} </span>
             </a>
         </span>
     </div>
 
     <div class="project-content">
-        <p>Site clone do Spotify, feito através do curso de desenvolvimento web da plataforma UDEMY.</p>
+        <p>{{recipe.description}}</p>
     </div>
 
     <div class="project-meta-container">
         <div class="project-meta project-preparation">
             <h3 class="project-meta-title"><i class="fas fa-stopwatch"></i> Tempo de Desenvolvimento</h3>
             <div class="project-meta-text">
-                5 dias
+                {{recipe.preparation_time}} {{recipe.preparation_time_unit}}
             </div>
         </div>
         <div class="project-meta project-servings">
             <h3 class="project-meta-title"><i class="fas fa-pizza-slice"></i> Participantes</h3>
             <div class="project-meta-text">
-                1 Participante
+                {{ recipe.servings }} {{ recipe.servings_unit }}
             </div>
         </div>
     </div>
