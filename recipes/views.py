@@ -9,4 +9,5 @@ def home(request):
 def recipe(request, id):
     return render(request, 'recipes/pages/project-view.html', context={
         'recipe': make_recipe(),
+        'is_detail_page': True,
     })

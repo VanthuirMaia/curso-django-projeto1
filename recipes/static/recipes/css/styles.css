@@ -162,6 +162,7 @@ h6 {
 
 .project-list-item {
     max-width: 64rem;
+    height: fit-content;
 }
 
 .project-list-item:hover {
@@ -241,6 +242,11 @@ h6 {
 .main-content-detail  .project-list-item:hover {
     transform: scale(1.02);
     box-shadow: -5px 5px 15px rgba(0, 0, 0, .2);
+}
+
+.preparation-steps {
+    padding: var(--spacing-gutter-medium);
+    justify-content: center;
 }
 
 .main-footer {
