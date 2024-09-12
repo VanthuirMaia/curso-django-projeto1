@@ -1,11 +1,16 @@
 {% load static %}
 <div class="project project-list-item">
     <div class="project-cover">
-        <img src="{{ recipe.cover.url }}" alt="Temp">
+        <a href="{% url 'recipes:recipe' recipe.id %}">
+            <img src="{{ recipe.cover.url }}" alt="Temp">
+        </a>
     </div>
     <div class="project-title-container">
         <h2 class="recipe-title">
-            {{ recipe.title }}
+            <a href="{% url 'recipes:recipe' recipe.id %}">
+                {{ recipe.title }}
+            </a>
+
         </h2>
     </div>
 
@@ -46,19 +51,18 @@
         </div>
     </div>
     {% if is_detail_page is not True %}
-        <footer class="project-footer">
-            <a class="project-read-more button button-dark button-full-width" href="/recipes/3/">
-                <i class="fas fa-eye"></i>
-                <span>ver mais...</span>
-            </a>
-        </footer>
+    <footer class="project-footer">
+        <a class="project-read-more button button-dark button-full-width" href="{% url 'recipes:recipe' recipe.id %}">
+            <i class="fas fa-eye"></i>
+            <span>ver mais...</span>
+        </a>
+    </footer>
     {% endif %}
 
     {% if is_detail_page is True %}
-        <div class="preparation-steps">
-            {{ recipe.preparation_steps | linebreaksbr}}
-        </div>
+    <div class="preparation-steps">
+        {{ recipe.preparation_steps | linebreaksbr}}
+    </div>
     {% endif %}
 
 </div>
-
