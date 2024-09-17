@@ -1,11 +1,11 @@
 {% load static %}
 <div class="project project-list-item">
     {% if recipe.cover %}
-        <div class="project-cover">
-            <a href="{% url 'recipes:recipe' recipe.id %}">
-                <img src="{{ recipe.cover.url }}" alt="Temp">
-            </a>
-        </div>
+    <div class="project-cover">
+        <a href="{% url 'recipes:recipe' recipe.id %}">
+            <img src="{{ recipe.cover.url }}" alt="Temp">
+        </a>
+    </div>
     {% endif %}
     <div class="project-title-container">
         <h2 class="recipe-title">
@@ -17,25 +17,30 @@
     </div>
 
     <div class="project-author">
-        <span class="project-author-item">
-            <i class="fas fa-user"></i>
-            {% if recipe.author.first_name %}
-                {{ recipe.author.first_name}}
-                {{ recipe.author.last_name}}
-            {% else %}
-                {{ recipe.author.username}}
-            {% endif %}
-        </span>
+        {% if recipe.author is not None %}
+            <span class="project-author-item">
+                <i class="fas fa-user"></i>
+                {% if recipe.author.first_name %}
+                    {{ recipe.author.first_name}}
+                    {{ recipe.author.last_name}}
+                {% else %}
+                    {{ recipe.author.username}}
+                {% endif %}
+            </span>
+        {% endif %}
+        
         <span class="project-author-item">
             <i class="fas fa-calendar-alt"></i>
             {{ recipe.created_at|date:"d/m/Y" }} às {{ recipe.created_at|date:"H:i" }}
         </span>
-        <span class="project-author-item">
-            <a href="{% url 'recipes:category' recipe.category.id %}">
-                <i class="fas fa-layer-group"></i>
-                <span> {{ recipe.category.name}} </span>
-            </a>
-        </span>
+        {% if recipe.category is not None  %}
+            <span class="project-author-item">
+                <a href="{% url 'recipes:category' recipe.category.id %}">
+                    <i class="fas fa-layer-group"></i>
+                    <span> {{ recipe.category.name}} </span>
+                </a>
+            </span>
+        {% endif %}
     </div>
 
     <div class="project-content">
