@@ -4,8 +4,17 @@
 
 {% block content %}
 <div class="main-content main-content-list container">
+{% for recipe in recipes %}
+    {% include 'recipes/partials/project.html' %}
+{% empty %}
+    <div class="center m-y">
+        <h1>Não há projects a exibir :(</h1>
+    </div>
+    
+{% endfor %}
+
     {% for recipe in recipes %}
-        {% include 'recipes/partials/project.html' %}
+
     {% endfor %}
 </div>
 {% endblock content %}
